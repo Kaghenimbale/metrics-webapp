@@ -11,8 +11,6 @@ const Home = () => {
     (state) => state.scores,
   );
 
-  console.log(scoreItems);
-
   useEffect(() => {
     if (!isFetched) {
       dispatch(fetchScores());
@@ -24,18 +22,23 @@ const Home = () => {
       <PuffLoader className="loader" />
     </div>
   ) : (
-    <div className="games">
-      {scoreItems.map((item) => (
-        <div className="game" key={item.videos[0].id}>
-          <div className="arrow-right">
-            <button className="arrow-btn" type="button">
-              <BsArrowRightCircle className="arrow" />
-            </button>
+    <>
+      <div>
+        {}
+      </div>
+      <div className="games">
+        {scoreItems.map((item) => (
+          <div className="game" key={item.videos[0].id}>
+            <div className="arrow-right">
+              <button className="arrow-btn" type="button">
+                <BsArrowRightCircle className="arrow" />
+              </button>
+            </div>
+            <p>{item.competition}</p>
           </div>
-          <p>{item.competition}</p>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 

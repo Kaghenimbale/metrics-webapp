@@ -43,6 +43,8 @@
 
 .game p {
   text-align: end;
+  color: white;
+  font-weight: 900;
 }
 
 .game:nth-child(4n+2),
