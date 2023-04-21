@@ -1,5 +1,5 @@
 .imageScore {
-  width: 45vw;
+  width: 50%;
 }
 
 .imageScore img {
@@ -11,17 +11,50 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: #1d1d1dff;
+  color: lightgray;
+}
+
+.title {
+  color: white;
+}
+
+.arrow-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+}
+
+.arrow {
+  font-size: 1.5rem;
   color: white;
 }
 
 .game {
-  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+  height: 25vh;
+}
+
+.game p {
+  text-align: end;
+}
+
+.game:nth-child(4n+2),
+.game:nth-child(4n+3) {
+  background: #4167aeff;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
 }
 
 .loader {
-  display: flex;
-  justify-content: center;
+  color: white;
 }

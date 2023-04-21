@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { PuffLoader } from 'react-spinners';
 import { useSelector, useDispatch } from 'react-redux';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import { fetchScores } from '../../Redux/Slice/scoreSlice';
 import './Home.css';
 
@@ -10,6 +11,8 @@ const Home = () => {
     (state) => state.scores,
   );
 
+  console.log(scoreItems);
+
   useEffect(() => {
     if (!isFetched) {
       dispatch(fetchScores());
@@ -17,16 +20,17 @@ const Home = () => {
   }, [dispatch, isFetched]);
 
   return isLoading ? (
-    <div className="loader">
-      <PuffLoader />
+    <div className="loader-container">
+      <PuffLoader className="loader" />
     </div>
   ) : (
     <div className="games">
       {scoreItems.map((item) => (
         <div className="game" key={item.videos[0].id}>
-          <h3>{item.title}</h3>
-          <div className="imageScore">
-            <img src={item.thumbnail} alt="imageScore" />
+          <div className="arrow-right">
+            <button className="arrow-btn" type="button">
+              <BsArrowRightCircle className="arrow" />
+            </button>
           </div>
           <p>{item.competition}</p>
         </div>
