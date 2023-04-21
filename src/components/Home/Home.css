@@ -1,0 +1,27 @@
+.imageScore {
+  width: 45vw;
+}
+
+.imageScore img {
+  width: 100%;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #1d1d1dff;
+  color: white;
+}
+
+.game {
+  height: 30vh;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+}

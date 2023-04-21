@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const url = 'https://www.scorebat.com/video-api/v3/feed/?token=NzcxMDVfMTY4MjA2NDkwMF9hNDA4ZTZkMTFlYzQyZmRiM2YxNzY3ZjYzMjBhYmQ1ZGEyMmUxNzY2';
 
@@ -9,12 +10,13 @@ const initialState = {
   isFetched: false,
 };
 
-const fetchScores = createAsyncThunk('score/fetchScores', async () => {
+export const fetchScores = createAsyncThunk('score/fetchScores', async () => {
   try {
-    const response = await fetch(url);
-    return response.json();
+    const response = await axios.get(url);
+
+    return response.data.response;
   } catch (error) {
-    return error.name;
+    return error.message;
   }
 });
 
@@ -30,8 +32,9 @@ const scoreSlice = createSlice({
       }))
       .addCase(fetchScores.fulfilled, (state, action) => ({
         ...state,
-        scoreItems: [...action.payload],
         isLoading: false,
+        isFetched: true,
+        scoreItems: [...action.payload],
       }))
       .addCase(fetchScores.rejected, (state) => ({
         ...state,
