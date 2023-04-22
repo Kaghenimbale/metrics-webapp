@@ -8,6 +8,7 @@ const initialState = {
   isLoading: false,
   error: null,
   isFetched: false,
+  itemFilter: [],
 };
 
 export const fetchScores = createAsyncThunk('score/fetchScores', async () => {
@@ -21,8 +22,17 @@ export const fetchScores = createAsyncThunk('score/fetchScores', async () => {
 });
 
 const scoreSlice = createSlice({
-  name: 'score',
+  name: 'scores',
   initialState,
+  reducers: {
+    filterScores: (state, action) => {
+      const competition = state.scoreItems.filter((item) => item.competition === action.payload);
+      return {
+        ...state,
+        itemFilter: [...competition],
+      };
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchScores.pending, (state) => ({
@@ -43,5 +53,7 @@ const scoreSlice = createSlice({
       }));
   },
 });
+
+export const { filterScores } = scoreSlice.actions;
 
 export default scoreSlice.reducer;

@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { PuffLoader } from 'react-spinners';
 import { useSelector, useDispatch } from 'react-redux';
 import { BsArrowRightCircle } from 'react-icons/bs';
-import { fetchScores } from '../../Redux/Slice/scoreSlice';
+import { NavLink } from 'react-router-dom';
+import { fetchScores, filterScores } from '../../Redux/Slice/scoreSlice';
 import './Home.css';
 
 const Home = () => {
@@ -11,11 +12,22 @@ const Home = () => {
     (state) => state.scores,
   );
 
+  const result = [];
+
+  scoreItems.forEach((element) => {
+    const duplicate = result.find((e) => e.competition === element.competition);
+    if (!duplicate) result.push(element);
+  });
+
   useEffect(() => {
     if (!isFetched) {
       dispatch(fetchScores());
     }
   }, [dispatch, isFetched]);
+
+  const handleScores = (id) => {
+    dispatch(filterScores(id));
+  };
 
   return isLoading ? (
     <div className="loader-container">
@@ -23,19 +35,25 @@ const Home = () => {
     </div>
   ) : (
     <>
-      <div>
-        {}
+      <div className="stats">
+        <h2>Current Stats</h2>
+        <h3>Top World championship</h3>
+        <p>{result.length}</p>
       </div>
       <div className="games">
-        {scoreItems.map((item) => (
-          <div className="game" key={item.videos[0].id}>
-            <div className="arrow-right">
-              <button className="arrow-btn" type="button">
-                <BsArrowRightCircle className="arrow" />
-              </button>
-            </div>
-            <p>{item.competition}</p>
-          </div>
+        {result.map((item) => (
+          <NavLink className="game" to="details" key={item.videos[0].id}>
+            <button className="arrow-btn" type="button" onClick={() => handleScores(item.competition)}>
+              <BsArrowRightCircle className="arrow" />
+              <div>
+                <div className="images">
+                  <img src={item.thumbnail} alt="gameImg" />
+                </div>
+
+                <p><a href={item.competitionUrl}>{item.competition}</a></p>
+              </div>
+            </button>
+          </NavLink>
         ))}
       </div>
     </>

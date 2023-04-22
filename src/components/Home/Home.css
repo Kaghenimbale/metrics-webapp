@@ -31,6 +31,9 @@
 .arrow {
   font-size: 1.5rem;
   color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .game {
@@ -38,17 +41,19 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0.5rem;
-  height: 25vh;
+  height: 20vh;
+  position: relative;
 }
 
-.game p {
+.game p a {
   text-align: end;
   color: white;
   font-weight: 900;
+  text-decoration: none;
 }
 
-.game:nth-child(4n+2),
-.game:nth-child(4n+3) {
+.game:nth-child(4n + 2),
+.game:nth-child(4n + 3) {
   background: #4167aeff;
 }
 
@@ -59,4 +64,26 @@
 
 .loader {
   color: white;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.stats h2,
+.stats p,
+.stats h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.images {
+  width: 30vw;
+}
+
+.images img {
+  width: 100%;
 }
