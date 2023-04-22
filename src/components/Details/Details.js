@@ -24,7 +24,7 @@ const Details = () => {
           <h3>2023</h3>
         </div>
         <h3>Today&#39;S Games</h3>
-        <div>
+        <div className="icons">
           <MdKeyboardVoice className="icon-Item" />
           <FiSettings className="icon-Item" />
         </div>
