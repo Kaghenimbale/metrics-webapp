@@ -31,7 +31,7 @@ const Details = () => {
       </div>
       <div className="daily-games">
         <h2>
-          Today Game(
+          Today Games(
           {itemFilter.length}
           )
         </h2>

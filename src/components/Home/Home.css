@@ -39,10 +39,8 @@
 .game {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  /* height: 30vh; */
   position: relative;
 }
 
@@ -86,7 +84,7 @@
 }
 
 .images {
-  width: 30vw;
+  width: 33vw;
 }
 
 .images img {
