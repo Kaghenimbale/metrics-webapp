@@ -39,13 +39,18 @@
 .game {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  height: 20vh;
+  /* height: 30vh; */
   position: relative;
 }
 
-.game p a {
+.game h2 {
+  color: lightgray;
+}
+
+.game h2 a {
   text-align: end;
   color: white;
   font-weight: 900;

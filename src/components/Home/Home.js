@@ -13,10 +13,12 @@ const Home = () => {
   );
 
   const result = [];
+  const objCount = {};
 
   scoreItems.forEach((element) => {
     const duplicate = result.find((e) => e.competition === element.competition);
     if (!duplicate) result.push(element);
+    objCount[element.competition] = (objCount[element.competition] || 0) + 1;
   });
 
   useEffect(() => {
@@ -50,7 +52,18 @@ const Home = () => {
                   <img src={item.thumbnail} alt="gameImg" />
                 </div>
 
-                <p><a href={item.competitionUrl}>{item.competition}</a></p>
+                <h2><a href={item.competitionUrl}>{item.competition}</a></h2>
+                <div className="">
+                  {Object.entries(objCount).map(([key, value]) => (
+                    key === item.competition && (
+                    <h2 key={key}>
+                      Chamionship Game(
+                      {value}
+                      )
+                    </h2>
+                    )
+                  ))}
+                </div>
               </div>
             </button>
           </NavLink>
