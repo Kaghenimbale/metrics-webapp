@@ -1,33 +1,54 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { BsArrowLeftCircle } from 'react-icons/bs';
+import { SlArrowLeft } from 'react-icons/sl';
 import { useSelector } from 'react-redux';
+import { MdKeyboardVoice } from 'react-icons/md';
+import { FiSettings } from 'react-icons/fi';
+import parse from 'html-react-parser';
 import './Details.css';
 
 const Details = () => {
   const { itemFilter } = useSelector((state) => state.scores);
+
   return (
-    <div>
-      <NavLink to="/">
-        <div>
-          <button className="arrow-left-btn" type="button">
-            <BsArrowLeftCircle className="arrow-left" />
-          </button>
+    <div className="detail">
+      <div className="detail-nav">
+        <div className="detail-left">
+          <NavLink to="/">
+            <div className="arrow-container">
+              <button className="arrow-left-btn" type="button">
+                <SlArrowLeft className="icon-Item arrow-left" />
+              </button>
+            </div>
+          </NavLink>
+          <h3>2023</h3>
         </div>
-      </NavLink>
+        <h3>Today&#39;S Games</h3>
+        <div>
+          <MdKeyboardVoice className="icon-Item" />
+          <FiSettings className="icon-Item" />
+        </div>
+      </div>
+      <div className="daily-games">
+        <h2>
+          Today Game(
+          {itemFilter.length}
+          )
+        </h2>
+      </div>
       <div className="filteredItems">
         {
             itemFilter.map((item) => (
-              <div key={item.videos[0].id}>
+              <div className="content" key={item.videos[0].id}>
                 <div className="container">
                   <div className="image">
-                    <img src={item.thumbnail} alt="competition" />
+                    { parse(item.videos[0].embed) }
                   </div>
-                  <div>
+                  <div className="description">
+                    <h2><a href={item.competitionUrl}>{item.competition}</a></h2>
                     <h2>{item.title}</h2>
                     <span>{item.date}</span>
                     <p><a href={item.matchviewUrl}>{item.videos[0].title}</a></p>
-                    <p><a href={item.competitionUrl}>{item.competition}</a></p>
                   </div>
                 </div>
               </div>
