@@ -53,7 +53,7 @@ const Home = () => {
                 </div>
 
                 <h2><a href={item.competitionUrl}>{item.competition}</a></h2>
-                <div className="">
+                <div className="statsGame">
                   {Object.entries(objCount).map(([key, value]) => (
                     key === item.competition && (
                     <h2 key={key}>
