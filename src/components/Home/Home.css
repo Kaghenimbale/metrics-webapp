@@ -41,11 +41,13 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0.5rem;
+  height: 25vh;
   position: relative;
 }
 
 .game h2 {
   color: lightgray;
+  font-size: 1rem;
 }
 
 .game h2 a {

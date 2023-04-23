@@ -52,17 +52,19 @@ const Home = () => {
                   <img src={item.thumbnail} alt="gameImg" />
                 </div>
 
-                <h2><a href={item.competitionUrl}>{item.competition}</a></h2>
-                <div className="statsGame">
-                  {Object.entries(objCount).map(([key, value]) => (
-                    key === item.competition && (
-                    <h2 key={key}>
-                      Chamionship Game(
-                      {value}
+                <div className="description">
+                  <h2><a href={item.competitionUrl}>{item.competition}</a></h2>
+                  <div className="statsGame">
+                    {Object.entries(objCount).map(([key, value]) => (
+                      key === item.competition && (
+                      <h2 key={key}>
+                        Chamionship Game(
+                        {value}
+                        )
+                      </h2>
                       )
-                    </h2>
-                    )
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </button>
