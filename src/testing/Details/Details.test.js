@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
-import Details from '../components/Details/Details';
+import Details from '../../components/Details/Details';
 import '@testing-library/jest-dom/extend-expect';
 
 const mockStore = configureMockStore();
@@ -40,5 +40,16 @@ describe('Details component', () => {
     expect(screen.getByText('ENGLAND: Premier League')).toBeInTheDocument();
     expect(screen.getByText('2023')).toBeInTheDocument();
     expect(screen.getByText('Highlights')).toBeInTheDocument();
+  });
+  it('renders the score lists correctly', () => {
+    const { container } = render(
+      <Router>
+        <Provider store={store}>
+          <Details />
+        </Provider>
+      </Router>,
+    );
+
+    expect(container.querySelector('.game')).toMatchSnapshot();
   });
 });

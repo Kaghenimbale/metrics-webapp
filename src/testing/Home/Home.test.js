@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
-import Home from '../components/Home/Home';
+import Home from '../../components/Home/Home';
 
 const mockStore = configureMockStore();
 
@@ -65,6 +65,6 @@ describe('Home Component', () => {
       </Router>,
     );
 
-    expect(container.querySelector('.game')).toBeInTheDocument();
+    expect(container.querySelector('.stats')).toMatchSnapshot();
   });
 });

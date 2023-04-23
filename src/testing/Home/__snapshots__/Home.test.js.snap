@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component renders the score lists correctly 1`] = `
+<div
+  class="stats"
+>
+  <h2>
+    Current Stats
+  </h2>
+  <h3>
+    Top World championship
+  </h3>
+  <p>
+    3
+  </p>
+</div>
+`;
