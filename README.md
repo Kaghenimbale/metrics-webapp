@@ -50,7 +50,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo](mylivescorefoot.netlify.app)
+[Live Demo](https://mylivescorefoot.netlify.app/)
 
 [Video Explanation](https://www.awesomescreenshot.com/video/16784845?key=90bd16f16ceee12febc95772f7c7f96d)
 
