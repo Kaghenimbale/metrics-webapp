@@ -92,3 +92,20 @@
 .images img {
   width: 100%;
 }
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.description h2 {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .images {
+    width: 50%;
+  }
+}

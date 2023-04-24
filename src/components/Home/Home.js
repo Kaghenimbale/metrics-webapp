@@ -47,7 +47,7 @@ const Home = () => {
           <NavLink className="game" to="details" key={item.videos[0].id}>
             <button className="arrow-btn" type="button" onClick={() => handleScores(item.competition)}>
               <BsArrowRightCircle className="arrow" />
-              <div>
+              <div className="game-content">
                 <div className="images">
                   <img src={item.thumbnail} alt="gameImg" />
                 </div>
