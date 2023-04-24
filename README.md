@@ -50,7 +50,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-This project has not been deployed
+[Live Demo](mylivescorefoot.netlify.app)
+
+[Video Explanation](https://www.awesomescreenshot.com/video/16784845?key=90bd16f16ceee12febc95772f7c7f96d)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
