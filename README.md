@@ -153,6 +153,8 @@ Give a start ⭐️ If you like this project...
 
 Thank you Microverse and my friend who always explain me for preparing this project! clapclapclap
 
+[Thanks to Nelson Sakwa The owner of our template Design](https://www.behance.net/sakwadesignstudio)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
