@@ -19,7 +19,7 @@
 }
 
 .arrow-right {
-  display: flex;
+  display: var(--dflex);
   justify-content: flex-end;
 }
 
@@ -37,8 +37,7 @@
 }
 
 .game {
-  display: flex;
-  flex-direction: column;
+  display: var(--dflex);
   justify-content: space-between;
   padding: 0.5rem;
   height: 25vh;
@@ -48,6 +47,7 @@
 .game h2 {
   color: lightgray;
   font-size: 1rem;
+  text-align: end;
 }
 
 .game h2 a {
@@ -63,7 +63,7 @@
 }
 
 .loader-container {
-  display: flex;
+  display: var(--dflex);
   justify-content: center;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .stats {
-  display: flex;
+  display: var(--dflex);
   flex-direction: column;
   align-items: center;
   color: white;
@@ -94,7 +94,7 @@
 }
 
 .description {
-  display: flex;
+  display: var(--dflex);
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
