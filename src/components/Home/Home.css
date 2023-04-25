@@ -1,0 +1,111 @@
+.imageScore {
+  width: 50%;
+}
+
+.imageScore img {
+  width: 100%;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  color: lightgray;
+}
+
+.title {
+  color: white;
+}
+
+.arrow-right {
+  display: var(--dflex);
+  justify-content: flex-end;
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.game {
+  display: var(--dflex);
+  justify-content: space-between;
+  padding: 0.5rem;
+  height: 25vh;
+  position: relative;
+}
+
+.game h2 {
+  color: lightgray;
+  font-size: 1rem;
+  text-align: end;
+}
+
+.game h2 a {
+  text-align: end;
+  color: white;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.game:nth-child(4n + 2),
+.game:nth-child(4n + 3) {
+  background: #4167aeff;
+}
+
+.loader-container {
+  display: var(--dflex);
+  justify-content: center;
+}
+
+.loader {
+  color: white;
+}
+
+.stats {
+  display: var(--dflex);
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.stats h2,
+.stats p,
+.stats h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.images {
+  width: 33vw;
+}
+
+.images img {
+  width: 100%;
+}
+
+.description {
+  display: var(--dflex);
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.description h2 {
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .images {
+    width: 40%;
+  }
+}
